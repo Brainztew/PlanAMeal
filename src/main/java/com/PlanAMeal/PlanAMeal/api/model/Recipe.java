@@ -1,5 +1,6 @@
 package com.PlanAMeal.PlanAMeal.api.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,12 +13,14 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "recipe_name", nullable = false, columnDefinition = "VARCHAR(255) default ''")
     private String recipeName;
     private String description;
     private String comment;
 
     public Recipe() {
-        
+
     }
     
     public Recipe(String recipeName, String description, String comment) {

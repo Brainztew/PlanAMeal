@@ -10,6 +10,7 @@ import com.PlanAMeal.PlanAMeal.api.repository.RecipeRepository;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,6 +40,18 @@ public class RecipeController {
         System.out.println("Raderar " + id);
         recipeRepository.deleteById(id);
     }
-    
-    
+
+    @PatchMapping("/{id}")
+    public Recipe editComment(@PathVariable int id, @RequestBody Recipe updatedRecipe) {
+        System.out.println("Patch " + id + updatedRecipe);
+
+        Recipe existingRecipe = recipeRepository.findById(id).orElse(null);
+
+        if (existingRecipe != null) {
+            existingRecipe.setComment(updatedRecipe.getComment());
+            return recipeRepository.save(existingRecipe);
+        } else {
+            return null;
+        }
+    }
 }
