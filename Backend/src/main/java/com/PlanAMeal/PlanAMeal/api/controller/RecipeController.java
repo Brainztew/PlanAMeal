@@ -1,6 +1,7 @@
 package com.PlanAMeal.PlanAMeal.api.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,14 +42,15 @@ public class RecipeController {
         recipeRepository.deleteById(id);
     }
 
-    @PatchMapping("/{id}")
-    public Recipe editComment(@PathVariable int id, @RequestBody Recipe updatedRecipe) {
-        System.out.println("Patch " + id + updatedRecipe);
+        @PatchMapping("/{id}")
+    public Recipe editComment(@PathVariable int id, @RequestBody Map<String, String> request) {
+        System.out.println("Patch " + id + request);
 
         Recipe existingRecipe = recipeRepository.findById(id).orElse(null);
 
         if (existingRecipe != null) {
-            existingRecipe.setComment(updatedRecipe.getComment());
+            String newComment = request.get("comment");
+            existingRecipe.setComment(newComment);
             return recipeRepository.save(existingRecipe);
         } else {
             return null;
