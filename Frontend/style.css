@@ -1,5 +1,26 @@
 body {
     color:gold;
     background-color: black;
+
 }
 
+button {
+    background-color: rgb(0, 0, 163);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: gold;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#randomRecipeField {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+}
+
+#recipeCategoryField {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
+}

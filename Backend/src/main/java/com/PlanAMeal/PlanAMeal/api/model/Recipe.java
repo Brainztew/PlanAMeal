@@ -13,12 +13,18 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int external_Id;
+
+    private int externalId;
+
     private String comment;
 
 
-    public int getExternal_Id() {
-        return external_Id;
+    public int getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(int externalId) {
+        this.externalId = externalId;
     }
 
     public Recipe() {
