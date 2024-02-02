@@ -181,13 +181,16 @@ function printSavedRecipe () {
         
                 title = document.createElement("h3");
                 title.innerText = externalData.meals[0].strMeal;
+                title.style.backgroundColor ="rgb(100, 11, 11)";
 
                 image = document.createElement("img");
                 image.src = externalData.meals[0].strMealThumb;
-                image.style.width = "80px";
+                image.style.width = "100px";
 
                 textfield = document.createElement("textarea");
                 textfield.value = recipe.comment;
+                textfield.style.height = "100px";
+                textfield.style.width = "200px";
 
                 editBtn = document.createElement("button");
                 editBtn.innerText = "Spara notis";
@@ -265,8 +268,9 @@ function printSavedRecipe () {
                     
                 });
                 
-                recipeList.appendChild(li);
+                
                 recipeList.appendChild(title);
+                recipeList.appendChild(li);
                 recipeList.appendChild(image);
                 recipeList.appendChild(textfield);
                 recipeList.appendChild(editBtn);
