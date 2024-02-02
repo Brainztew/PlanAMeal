@@ -4,7 +4,6 @@ let savedRecipeBtn = document.getElementById("savedRecipeBtn");
 let randomRecipeBtn = document.getElementById("randomRecipeBtn");
 let homeBtn = document.getElementById("homeBtn");
 let recipeCategoryField2 = document.getElementById("recipeCategoryField2");
-
 hej();
 
 savedRecipeBtn.addEventListener("click", function () {
@@ -82,8 +81,4 @@ homeBtn.addEventListener("click", () => {
     printCategories();
 })
 
-
 printCategories();
-
-
-
