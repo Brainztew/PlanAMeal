@@ -1,5 +1,7 @@
 Hej och välkommna till min applikation ”PlanAMeal”
 
+Mina reflektioner och databas finns i mitt github repo och jag hoppas allt är tydligt nog, ifall det finns tveksamheter finns mina kontaktuppgifter i reflektioner.docx fotnot!
+
 För att starta upp så behöver du göra några saker först:
 
 1. Ladda ner github repot.
